@@ -19,7 +19,7 @@ const Navbar = () => {
                   alt="React Jobs"
                 />
                 <span className="hidden md:block text-white text-2xl font-bold ml-2">
-                  Pokimon {/* jobs */}
+                  Pokimon {/* Home */}
                 </span>
               </a>
               <div className="md:ml-auto">
@@ -34,13 +34,13 @@ const Navbar = () => {
                     href="/jobs.html"
                     className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                   >
-                    Pokimons
+                    Pokimons {/*jobs */}
                   </a>
                   <a
                     href="/add-job.html"
                     className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                   >
-                    Add Job
+                    Pokidex {/* Add Job */}
                   </a>
                 </div>
               </div>

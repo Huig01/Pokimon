@@ -2,7 +2,7 @@ import React from "react";
 
 import Card from "./Card";
 
-const HomeCrads = () => {
+const HomeCards = () => {
   return (
     <>
       <section className="py-4">
@@ -21,15 +21,15 @@ const HomeCrads = () => {
               </a>
             </Card>
             <Card bg ='bg-red-500'>
-              <h2 className="text-2xl font-bold text-white">For Employers</h2>
+              <h2 className="text-2xl font-bold text-white">Pokidex{/* For Employers */}</h2>
               <p className="mt-2 mb-4 text-white">
-                List your job to find the perfect developer for the role
+                List of Abilities of all pokimons to find what is perfect for you{/* List your job to find the perfect developer for the role */}
               </p>
               <a
                 href="/add-job.html"
                 className="inline-block bg-gray-600 text-white rounded-lg px-4 py-2 hover:bg-black"
               >
-                Add Job
+                Pokidex{/* Add Job */}
               </a>
             </Card>
           </div>
@@ -39,4 +39,4 @@ const HomeCrads = () => {
   );
 };
 
-export default HomeCrads;
+export default HomeCards;
