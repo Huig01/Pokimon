@@ -13,3 +13,4 @@ const Pokimon = () => {
 };
 
 export default Pokimon;
+ 
