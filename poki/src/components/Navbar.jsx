@@ -34,6 +34,12 @@ const Navbar = () => {
                     href="/jobs.html"
                     className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                   >
+                    Favorite {/*jobs */}
+                  </a>
+                  <a
+                    href="/jobs.html"
+                    className="text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                  >
                     Pokimons {/*jobs */}
                   </a>
                   <a
