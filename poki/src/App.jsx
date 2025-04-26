@@ -1,15 +1,25 @@
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./components/App.css";
 
-import Navbar from "./components/Navbar";
-import Trainer from "./components/Trainer";
-import HomeCards from "./components/HomeCards";
-import PokimonList from "./components/PokimonList";
-import PokemonDetails from "./components/PokimonDetails";
+import MainLayout from "./layouts/MainLayout";
+import HomePage from "./pages/HomePage";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<MainLayout />}>
+      <Route index element={<HomePage />} />
+    </Route>
+  )
+);
 const App = () => {
-  const [pokemonList, setPokemonList] = useState([]);
+  /* const [pokemonList, setPokemonList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedPokemon, setSelectedPokemon] = useState(null);
 
@@ -37,32 +47,9 @@ const App = () => {
     } catch (err) {
       console.error(err.message);
     }
-  };
+  }; */
 
-  return (
-    <>
-      <Navbar />
-      <Trainer />
-      <HomeCards />
-
-      {/* Search Bar */}
-      <div className="search-container">
-        <input
-          className="search-box"
-          type="text"
-          placeholder="Search Pokémon..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
-
-      {/* Selected Pokémon Details */}
-      {selectedPokemon && <PokemonDetails pokemon={selectedPokemon} />}
-
-      {/* Pokémon List */}
-      <PokimonList pokemon={filteredPokemonList} onPokemonClick={showPokemon} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;
