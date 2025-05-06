@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../components/ListPokemons.css";
+import "../CSSmappen/ListPokemons.css";
 import { useNavigate } from "react-router-dom";
 
 const FavorietPage = () => {
