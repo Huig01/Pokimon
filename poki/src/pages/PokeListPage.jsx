@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const PokeListPage = () => {
+
+  // Hier worden de states gedefinieerd voor de Pokémonlijst, zoekterm, laadtoestand en favorieten. als leege array.
   const [pokemonList, setPokemonList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
@@ -13,7 +15,10 @@ const PokeListPage = () => {
   });
 
   const navigate = useNavigate();
-
+  // Hier wordt de Pokémonlijst opgehaald van de API door de useEffect hook.
+  // met een useEffect hook die alleen bij de eerste render wordt uitgevoerd.
+  // daarna doormiddel van een async functie haalt hij alle Pokémon op,
+  // en slaat ze op in de state pokemonList. met een id, naam en types.
   useEffect(() => {
     const fetchPokemonList = async () => {
       try {
@@ -42,11 +47,11 @@ const PokeListPage = () => {
 
     fetchPokemonList();
   }, []);
-
+  // Hier wordt de functie gedefinieerd die wordt aangeroepen wanneer een Pokémon wordt aangeklikt zodat het naar een ander pagina gaat zoals de pokedex.
   const handlePokemonClick = (pokemon) => {
     navigate(`/pokedex/${pokemon.name}`);
   };
-
+  // Hier wordt de functie gedefinieerd die de favorieten toggle, als de Pokémon al in de favorieten staat, wordt deze verwijderd, anders wordt deze toegevoegd maar heb de Verwijder knop niet in gedaan.
   const toggleFavorite = (pokemonId) => {
     let updatedFavorites;
     if (favorites.includes(pokemonId)) {
@@ -65,6 +70,7 @@ const PokeListPage = () => {
   if (loading) return <p>Loading Pokémon...</p>;
 
   return (
+    // Hier wordt de hele pagina opgebouwd met een zoekbalk, en een lijst van Pokémon met hun afbeelding, naam en types.
     <div>
       <h1>Pokémon Lijst</h1>
       <input

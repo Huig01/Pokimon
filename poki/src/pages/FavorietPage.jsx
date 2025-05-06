@@ -7,7 +7,8 @@ const FavorietPage = () => {
   const [favoritePokemons, setFavoritePokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  // Hier wordt de useEffect gedefinieerd die de favorieten ophaalt uit de localStorage(deze blijft staan ook als je het afsluit of refresh) en deze opslaat in de state favoritePokemons.
+  // De gegevens worden opgehaald van de API en opgeslagen in de state favoritePokemons met een id, naam en types.
   useEffect(() => {
     const fetchFavorites = async () => {
       const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
@@ -40,6 +41,9 @@ const FavorietPage = () => {
   if (loading) return <p>Favoriete Pokémon laden...</p>;
 
   return (
+    // Dan wordt de lijst van favoriete Pokémon weergegeven met hun afbeelding, naam en types.
+    // Als er geen favoriete Pokémon zijn, wordt er een bericht weergegeven dat er nog geen favoriete Pokémon zijn toegevoegd.
+    // Als je er op klikt, ga je naar de Pokedex-pagina van die Pokémon met alle details over de pokemon.
     <div>
       <h1>Favoriete Pokémon</h1>
       {favoritePokemons.length === 0 ? (
