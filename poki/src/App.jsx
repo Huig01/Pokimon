@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import "./components/App.css";
+import "./CSSmappen/App.css";
 
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";

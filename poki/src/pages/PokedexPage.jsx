@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../components/Stats.css";
+import "../CSSmappen/Stats.css";
 import { useParams } from "react-router-dom"; // om de naam uit de URL te halen
 
 const PokedexPage = () => {
